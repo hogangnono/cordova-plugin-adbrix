@@ -50,7 +50,7 @@
         <source-file src="src/ios/Adbrix.m" />
         <header-file src="src/ios/Adbrix.h" />
 
-        <framework id="IgaworksCore" type="podspec" />
-        <framework id="Adbrix" type="podspec" />
+        <framework src="IgaworksCore" type="podspec" />
+        <framework src="Adbrix" type="podspec" />
     </platform>
 </plugin>
