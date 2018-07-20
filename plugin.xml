@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-adbrix" version="0.1.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-adbrix" version="0.1.2">
     <name>adBrix</name>
     <description>adBrix tool</description>
     <license>Apache 2.0</license>
     <keywords>adbrix,tracking,analytics</keywords>
     <js-module src="www/adbrix.js" name="Adbrix">
-        <clobbers target="cordova.adbrix" />
+        <clobbers target="adbrix" />
     </js-module>
 	<preference name="ADBRIX_KEY" />
     <preference name="ADBRIX_HASHKEY" />
@@ -50,7 +50,7 @@
         <source-file src="src/ios/Adbrix.m" />
         <header-file src="src/ios/Adbrix.h" />
 
-        <framework src="IgaworksCore" type="podspec" spec="~> 2.4.3" />
-        <framework src="AdBrix" type="podspec" spec="~> 2.2.6" />
+        <framework src="IgaworksCore" type="podspec" spec="~> 2.4.7" />
+        <framework src="AdBrix" type="podspec" spec="~> 2.2.8" />
     </platform>
 </plugin>

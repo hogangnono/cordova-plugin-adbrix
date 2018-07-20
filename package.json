@@ -1,7 +1,7 @@
 {
   "id": "cordova-plugin-adbrix",
   "name": "cordova-plugin-adbrix",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "description": "Cordova Adbrix Plugin",
   "cordova": {
     "id": "cordova-plugin-adbrix",
