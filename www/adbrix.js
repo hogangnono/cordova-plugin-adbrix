@@ -6,23 +6,27 @@ var exec = require('cordova/exec');
 
 var Adbrix = {
     endSession: function(callback) {
-        exec(callback,function(err){console.log("adbrix error!");},"Adbrix","end",[]);
+        exec(callback, function(err) { console.log("adbrix error!"); },"Adbrix","end",[]);
     },
 
-    retention: function (menuName,callback) {
-        exec(callback,function(err){console.log("adbrix menu error!");},"Adbrix","retention",[menuName]);
+    retention: function (menuName, callback) {
+        exec(callback, function(err){console.log("adbrix menu error!");},"Adbrix","retention",[menuName]);
     },
 
-    member: function (menuName,callback) {
-        exec(callback,function(err){console.log("adbrix member error!");},"Adbrix","member",[]);
+    member: function (menuName, callback) {
+        exec(callback, function(err){ console.log("adbrix member error!");},"Adbrix","member",[]);
     },
 
     age: function (age,callback) {
-        exec(callback,function(err){console.log("adbrix age error!");},"Adbrix","age",[age]);
+        exec(callback, function(err){ console.log("adbrix age error!"); },"Adbrix","age",[age]);
     },
 
     gender: function (gender,callback) {
-        exec(callback,function(err){console.log("adbrix gender error!");},"Adbrix","gender",[gender]);
+        exec(callback, function(err){ console.log("adbrix gender error!"); },"Adbrix","gender",[gender]);
+    },
+
+    firstImp: function (str, callback) {
+        exec(callback, function(err) { console.log("adbrix firstImp error!"); }, "Adbrix", "firstImp", [str]);
     }
 };
 

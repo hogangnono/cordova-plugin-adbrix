@@ -2,6 +2,7 @@ package com.mscbrain.lib.tracking;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -12,7 +13,6 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
-import org.chromium.base.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -41,17 +41,18 @@ public class AdBrixPlugin  extends CordovaPlugin {
         Log.v(LOG_TAG, "adBrixPlugin : execute " + action);
         this.callbackContext = callbackContext;
         if(action.equals("end")){
-        	Log.v(LOG_TAG, "adBrixPlugin :  " + action);
-        }else if(action.equals("retention")){
-        	Log.v(LOG_TAG, "adBrixPlugin :  " + action);
+            Log.v(LOG_TAG, "adBrixPlugin :  " + action);
+        } else if(action.equals("retention")){
+            Log.v(LOG_TAG, "adBrixPlugin :  " + action);
             final String menuName = options.getString(0);
+            Log.v(LOG_TAG, "menuName: " + menuName);
             IgawAdbrix.retention(menuName);
-        }else if(action.equals("age")){
+        } else if(action.equals("age")){
             Log.v(LOG_TAG, "adBrixPlugin :  " + action);
             final int age = options.getInt(0);
             Log.v(LOG_TAG, "adBrixPlugin age :  " + age);
             IgawCommon.setAge(age);
-        }else if(action.equals("gender")){
+        } else if(action.equals("gender")){
             Log.v(LOG_TAG, "adBrixPlugin :  " + action);
             final String gender = options.getString(0);
             Log.v(LOG_TAG, "adBrixPlugin gender :  " + gender);
@@ -60,9 +61,11 @@ public class AdBrixPlugin  extends CordovaPlugin {
             }else {
                 IgawCommon.setGender(IgawCommon.Gender.MALE);
             }
-        }else if(action.equals("member")){
-        	Log.v(LOG_TAG, "adBrixPlugin :  " + action);
-        	
+        } else if(action.equals("member")){
+            Log.v(LOG_TAG, "adBrixPlugin :  " + action);
+        } else if(action.equals("firstImp")) {
+            Log.v(LOG_TAG, "adBrixPlugin :  " + action);
+            IgawAdbrix.firstTimeExperience(options.getString(0));
         }
         return true;
     }
