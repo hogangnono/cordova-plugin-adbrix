@@ -19,7 +19,7 @@ var Adbrix = {
 
     age: function (age,callback) {
         exec(callback,function(err){console.log("adbrix age error!");},"Adbrix","age",[age]);
-    }
+    },
 
     gender: function (gender,callback) {
         exec(callback,function(err){console.log("adbrix gender error!");},"Adbrix","gender",[gender]);
