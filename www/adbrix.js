@@ -27,7 +27,12 @@ var Adbrix = {
 
     firstImp: function (str, callback) {
         exec(callback, function(err) { console.log("adbrix firstImp error!"); }, "Adbrix", "firstImp", [str]);
+    },
+
+    initSDK: function (success, error) {
+        exec(success, error, "Adbrix", "initSDK", []);
     }
 };
+;
 
 module.exports = Adbrix;

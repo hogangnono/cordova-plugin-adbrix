@@ -9,6 +9,7 @@
 #import <Cordova/CDVPlugin.h>
 #import <AdBrix/AdBrix.h>
 #import <IgaworksCore/IgaworksCore.h>
+#import <AdSupport/AdSupport.h>
 
 @implementation Adbrix
 
@@ -23,7 +24,6 @@
 -(void) age :(CDVInvokedUrlCommand*)command
 {
     NSInteger* age  = [[command.arguments objectAtIndex:0] intValue];
-
  //   NSLog(@"menuName============!!==%@", [age stringValue]);
     [IgaworksCore setAge:age];
 
@@ -50,4 +50,25 @@
 
 }
 
+- (void)member:(CDVInvokedUrlCommand *)command {
+    
+}
+
+- (void)initSDK:(CDVInvokedUrlCommand *)command
+{
+    if (NSClassFromString(@"ASIdentifierManager")){
+        NSUUID *ifa =[[ASIdentifierManager sharedManager]advertisingIdentifier];
+        BOOL isAppleAdvertisingTrackingEnalbed = [[ASIdentifierManager sharedManager]isAdvertisingTrackingEnabled];
+        if (isAppleAdvertisingTrackingEnalbed && [ifa UUIDString]) {
+            [IgaworksCore setAppleAdvertisingIdentifier:[ifa UUIDString] isAppleAdvertisingTrackingEnabled:isAppleAdvertisingTrackingEnalbed];
+        }
+    }
+    NSString *adbrixKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ADBRIX_KEY"];
+    NSString *adbrixHashKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"ADBRIX_HASHKEY"];
+
+    [IgaworksCore igaworksCoreWithAppKey:adbrixKey andHashKey:adbrixHashKey];
+    
+    CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
 @end

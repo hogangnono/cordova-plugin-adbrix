@@ -16,5 +16,6 @@
 - (void) gender:(CDVInvokedUrlCommand*)command;
 - (void) member:(CDVInvokedUrlCommand*)command;
 - (void) firstImp:(CDVInvokedUrlCommand*)command;
+- (void) initSDK:(CDVInvokedUrlCommand *)command;
 @end
 
