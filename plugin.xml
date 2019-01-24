@@ -7,8 +7,10 @@
     <js-module src="www/adbrix.js" name="Adbrix">
         <clobbers target="adbrix" />
     </js-module>
-	<preference name="ADBRIX_KEY" />
-    <preference name="ADBRIX_HASHKEY" />
+	<preference name="IOS_KEY" />
+    <preference name="IOS_HASHKEY" />
+    <preference name="AND_KEY" />
+    <preference name="AND_HASHKEY" />
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Adbrix">
@@ -32,8 +34,8 @@
         	</receiver>
          </config-file>
 	     <config-file target="res/values/adbrix_strings.xml" parent="/*">
-            <string name="adbrix_key">$ADBRIX_KEY</string>
-            <string name="adbrix_hashkey">$ADBRIX_HASHKEY</string>
+            <string name="adbrix_key">$AND_KEY</string>
+            <string name="adbrix_hashkey">$AND_HASHKEY</string>
 	     </config-file>
          <source-file src="src/android/adbrix_strings.xml" target-dir="res/values" />
          <source-file src="src/android/AdBrixPlugin.java" target-dir="src/com/mscbrain/lib/tracking" />
@@ -48,8 +50,8 @@
             </feature>
         </config-file>
         <config-file target="*-Info.plist" parent="/*">
-            <string name="ADBRIX_KEY">$ADBRIX_KEY</string>
-            <string name="ADBRIX_HASHKEY">$ADBRIX_HASHKEY</string>
+            <string name="ADBRIX_KEY">$IOS_KEY</string>
+            <string name="ADBRIX_HASHKEY">$AND_HASHKEY</string>
         </config-file>
         <source-file src="src/ios/Adbrix.m" />
         <header-file src="src/ios/Adbrix.h" />
