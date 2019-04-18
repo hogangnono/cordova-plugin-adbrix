@@ -58,7 +58,14 @@
         <source-file src="src/ios/Adbrix.m" />
         <header-file src="src/ios/Adbrix.h" />
 
-        <framework src="AdBrix" type="podspec" spec="~> 2.2.8" />
-        <framework src="IgaworksCore" type="podspec" spec="~> 2.4.7" />
+        <podspec>
+            <config>
+                <source url="https://github.com/CocoaPods/Specs.git"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="AdBrix" spec="~> 2.2.8" />
+                <pod name="IgaworksCore" spec="~> 2.4.7" />
+            </pods>
+        </podspec>
     </platform>
 </plugin>
